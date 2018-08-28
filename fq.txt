@@ -1,0 +1,31 @@
+###
+1. mix phx.new `name` --no-html --no-brunch # for API common flags
+###
+2. mix.exs - ADD absinthe&absinthe_plug&absinthe_ecto(using git: `url`)
+###
+3. mix do deps.get, compile
+###
+4. Even not using JSON it's possible to:
+        > mix phx.gen.json 'ContextName' 'SchemaName' 'table_name' smth:type ...
+4.1. Add to Router using hint.
+        resources "/users", UserController, except: [:new, :edit]
+###
+5. Look 4.; for Posts. ... `... user_id:references:users`
+5.1.  Look 4.1.
+###
+6. mix ecto.create
+###
+7. Add to user schema `has_many :posts, Graphical.Posts.Post`
+###
+8. mix ecto.migrate
+###
+9. mix run priv/repo/seeds.exs # for seed fake info
+### ###
+10. GraphQL -> create folder 'schema' in graphical_web -> + file 'types.ex'
+###
+11. GraphQL -> create NameWeb.Schema view in 'views'
+###
+12. Create a folder 'resolvers' in 'graphical' and create all resolvers
+###
+13. Add to router forwards to graphiql, Plug then and "schema: GraphicalWeb.Schema"
+    Delete "/api" -> "/", replace "/api" to forward with Plug
