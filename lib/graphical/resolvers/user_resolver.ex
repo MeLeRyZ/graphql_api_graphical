@@ -12,4 +12,10 @@ defmodule Graphical.UserResolver do
         end
     end
 
+    # needs a change for new 'update_changeset' func in accounts.ex
+    def update(%{id: id, user: user_params}, _info) do
+        Accounts.get_user!(id)
+        |> Accounts.update_user(user_params)
+    end
+
 end

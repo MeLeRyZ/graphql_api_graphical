@@ -43,4 +43,4 @@ config :graphical, Graphical.Repo,
   password: "postgres",
   database: "graphical_dev",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 100

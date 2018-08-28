@@ -43,7 +43,10 @@ defmodule Graphical.Mixfile do
       {:absinthe, "~> 1.4.6"},
       {:absinthe_plug, "~> 1.4.2"},
       {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
-      {:faker, "~> 0.9"} # allows to create fake data
+      {:faker, "~> 0.9"}, # allows to create fake data
+      {:comeonin, "~> 4.0"}, # to hash passwords
+      {:bcrypt_elixir, "~> 1.0"}, # helper for comeonin
+      {:guardian, "~> 1.0"} # deploy tokens
     ]
   end
 

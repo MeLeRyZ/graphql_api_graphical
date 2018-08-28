@@ -29,3 +29,10 @@
 ###
 13. Add to router forwards to graphiql, Plug then and "schema: GraphicalWeb.Schema"
     Delete "/api" -> "/", replace "/api" to forward with Plug
+### ###
+14. for tokens add guardian and others to mix.exs->deps
+    > cd deps/bcrypt_elixir && make clean && make
+###
+15. then > mix guardian.gen.secret -> token in 'config'
+###
+16. > mix ecto.gen.migration add_password_hash
